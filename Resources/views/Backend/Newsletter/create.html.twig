@@ -1,0 +1,15 @@
+{% extends 'SyliusNewsletterBundle:Backend:layout.html.twig' %}
+
+{% block content %}
+
+<h2>creating new newsletter...</h2>
+
+<form action="{{ path('sylius_newsletter_backend_newsletter_create') }}" method="post">
+
+{{ form_widget(form) }}
+		
+<input type="submit" value="create newsletter" />
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+
+ This file is part of the Sylius package.
+
+ (c) Paweł Jędrzejewski
+ 
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+
+-->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    <parameters>
+    	<parameter key="sylius_newsletter.form.type.newsletter_hidden.class">Sylius\Bundle\NewsletterBundle\Form\Type\NewsletterHiddenType</parameter>
+    	<parameter key="sylius_newsletter.form.data_transformer.newsletter_to_id.class">Sylius\Bundle\NewsletterBundle\Form\DataTransformer\NewsletterToIdTransformer</parameter>
+    </parameters>
+    
+    <services>
+    	<!-- types... -->
+        <service id="sylius_newsletter.form.type.newsletter" class="%sylius_newsletter.form.type.newsletter.class%">
+        	<argument>%sylius_newsletter.model.newsletter.class%</argument>
+        	<tag name="form.type" alias="sylius_newsletter" />
+        </service>
+        <service id="sylius_newsletter.form.type.newsletter_hidden" class="%sylius_newsletter.form.type.newsletter_hidden.class%">
+        	<argument>%sylius_newsletter.model.newsletter.class%</argument>
+        	<argument type="service" id="sylius_newsletter.form.data_transformer.newsletter_to_id" />
+        	<tag name="form.type" alias="sylius_newsletter_hidden" />
+        </service>
+        <service id="sylius_newsletter.form.type.subscriber" class="%sylius_newsletter.form.type.subscriber.class%">
+        	<argument>%sylius_newsletter.model.subscriber.class%</argument>
+        	<tag name="form.type" alias="sylius_newsletter_subscriber" />
+        </service>
+        
+        <!-- data transformers... -->
+        <service id="sylius_newsletter.form.data_transformer.newsletter_to_id" class="%sylius_newsletter.form.data_transformer.newsletter_to_id.class%">
+        	<argument type="service" id="sylius_newsletter.manager.newsletter" />
+        </service>
+    </services>
+
+</container>

@@ -1,0 +1,23 @@
+sylius_newsletter_backend_newsletter_list:
+    pattern: /list
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:listAction }
+
+sylius_newsletter_backend_newsletter_send:
+    pattern: /{id}/send
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:sendAction }
+
+sylius_newsletter_backend_newsletter_create:
+    pattern: /create
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:createAction }
+    
+sylius_newsletter_backend_newsletter_update:
+    pattern: /{id}/update
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:updateAction }
+        
+sylius_newsletter_backend_newsletter_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:deleteAction }
+    
+sylius_newsletter_backend_newsletter_show:
+    pattern: /{id}
+    defaults: { _controller: sylius_newsletter.controller.backend.newsletter:showAction }

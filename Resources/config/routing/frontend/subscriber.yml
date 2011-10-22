@@ -1,0 +1,11 @@
+sylius_newsletter_subscriber_subscribe:
+    pattern: /subscribe
+    defaults: { _controller: sylius_newsletter.controller.frontend.subscriber:subscribeAction }
+    
+sylius_newsletter_subscriber_unsubscribe:
+    pattern: /unsubscribe/{token}
+    defaults: { _controller: sylius_newsletter.controller.frontend.subscriber:unsubscribeAction }
+    
+sylius_newsletter_subscriber_confirm:
+    pattern: /confirm/{token}
+    defaults: { _controller: sylius_newsletter.controller.frontend.subscriber:confirmAction }

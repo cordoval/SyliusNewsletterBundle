@@ -1,0 +1,13 @@
+{% extends 'SyliusNewsletterBundle:Backend:layout.html.twig' %}
+
+{% block content %}
+
+<h2>newsletter information.</h2>
+
+id: {{ newsletter.id }} <br />
+name: {{ newsletter.name }} <br />
+description... <br />
+{{ newsletter.description }} <br />
+link: <a href="{{ path('sylius_newsletter_newsletter_show', {'id': newsletter.id, 'slug': newsletter.slug}) }}">{{ newsletter.name }}</a>
+
+{% endblock %}

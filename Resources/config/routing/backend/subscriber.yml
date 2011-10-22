@@ -1,0 +1,19 @@
+sylius_newsletter_backend_subscriber_list:
+    pattern: /list
+    defaults: { _controller: sylius_newsletter.controller.backend.subscriber:listAction }
+
+sylius_newsletter_backend_subscriber_create:
+    pattern: /create
+    defaults: { _controller: sylius_newsletter.controller.backend.subscriber:createAction }
+    
+sylius_newsletter_backend_subscriber_update:
+    pattern: /{id}/update
+    defaults: { _controller: sylius_newsletter.controller.backend.subscriber:updateAction }
+        
+sylius_newsletter_backend_subscriber_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: sylius_newsletter.controller.backend.subscriber:deleteAction }
+    
+sylius_newsletter_backend_subscriber_show:
+    pattern: /{id}
+    defaults: { _controller: sylius_newsletter.controller.backend.subscriber:showAction }

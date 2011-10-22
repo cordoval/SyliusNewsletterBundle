@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="sylius_newsletter.extension.confirmation.listener" class="Sylius\Bundle\NewsletterBundle\EventDispatcher\Listener\ConfirmationListener">
+        	<argument>%sylius_newsletter.extension.confirmation.options%</argument>
+        	<argument type="service" id="mailer" />
+        	<argument type="service" id="templating" />
+            <tag name="kernel.event_listener" event="sylius_newsletter.event.subscriber.subscribe" method="onSubscriberSubscribe" priority="-513" />
+        </service>
+    </services>
+    
+</container>

@@ -1,0 +1,8 @@
+# This file is part of Sylius package.
+# (c) Paweł Jędrzejewski
+
+newsletter.show: Show newsletter
+newsletter.list: List newsletters
+newsletter.create: Create newsletter
+newsletter.update: Edit newsletter
+newsletter.delete: Delete newsletter
