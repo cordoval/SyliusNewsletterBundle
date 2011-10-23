@@ -47,13 +47,15 @@ class ConfirmationListener
         $subscriber = $event->getSubscriber();
         $subscriber->setEnabled(false);
         
+        $body = $this->templating->render($this->options['email']['template'], array(
+                    'subscriber' => $subscriber,
+                ));
+        
         $message = \Swift_Message::newInstance()
         ->setSubject($this->options['email']['subject'])
         ->setFrom($this->options['email']['from'])
         ->setTo($subscriber->getEmail())
-        ->setBody($this->templating->render($this->options['email']['template'], array(
-            'subscriber' => $subscriber,
-        )));
+        ->setBody($body, 'text/html');
         
         $this->mailer->send($message);
     }

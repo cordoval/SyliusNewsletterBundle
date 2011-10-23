@@ -29,7 +29,7 @@ class RegisterSendersPass implements CompilerPassInterface
         }
 
         $sender = $container->getDefinition('sylius_newsletter.sender');
-        foreach ($container->findTaggedServiceIds('sylius_sales.operation') as $id => $attributes) {
+        foreach ($container->findTaggedServiceIds('sylius_newsletter.sender') as $id => $attributes) {
             $sender->addMethodCall('registerSender', array(new Reference($id)));
         }
     }
