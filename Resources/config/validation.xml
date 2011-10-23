@@ -47,16 +47,16 @@ http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
 	<class name="Sylius\Bundle\NewsletterBundle\Model\Subscriber">
 		
 		<constraint name="Sylius\Bundle\NewsletterBundle\Validator\Constraint\Unique">
-			<option name="message">Ten adres jest już zapisany na newsletter</option>
+			<option name="message">This email is already subscribed</option>
 			<option name="property">email</option>
 		</constraint>
 		
 		<property name="email">
             <constraint name="NotBlank">
-                <option name="message">Wprowadź adres email</option>
+                <option name="message">Please enter the email</option>
             </constraint>
             <constraint name="Email">
-            	<option name="message">Wprowadź poprawny adres e-mail</option>
+            	<option name="message">Please enter valid email</option>
             </constraint>
         </property>
 		
