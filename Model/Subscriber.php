@@ -43,7 +43,7 @@ abstract class Subscriber implements SubscriberInterface
     
     public function setEmail($email)
     {
-        $this->email = $email;
+        $this->email = strtolower($email);
     }
     
     public function isEnabled()
