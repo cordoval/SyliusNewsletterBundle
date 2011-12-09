@@ -27,7 +27,7 @@ abstract class Subscriber implements SubscriberInterface
 
     public function __construct()
     {
-        $this->enabled = true;
+        $this->enabled = false;
         $this->generateConfirmationToken();
     }
     
