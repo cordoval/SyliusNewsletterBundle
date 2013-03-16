@@ -37,7 +37,7 @@ It's open sourced github project.
 Documentation.
 --------------
 
-Docs are available [here](https://github.com/Sylius/SyliusNewsletterBundle/blob/master/Resources/doc/index.md).
+Docs are available [here](https://github.com/cordoval/SyliusNewsletterBundle/blob/master/Resources/doc/index.md).
 
 Dependencies.
 -------------
